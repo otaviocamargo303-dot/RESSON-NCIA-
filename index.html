@@ -1,12 +1,11 @@
-    <!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <title>Ressonância</title>
 
 <style>
-/* Zera tudo para evitar bordas brancas estranhas */
 * {
   margin: 0;
   padding: 0;
@@ -14,149 +13,113 @@
 }
 
 body {
-  width: 100%;
-  height: 100vh; /* Ocupa a altura total da tela */
+  width: 100vw;
+  height: 100vh;
   background: black;
   font-family: Arial, sans-serif;
-  
-  /* Centralização Flexbox */
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  overflow: hidden; /* Bloqueia rolagem indesejada */
+  overflow: hidden; /* Trava a rolagem */
   position: relative;
 }
 
-/* Fundo Animado (Roxo e Vermelho) */
-body::before {
+/* Efeito de Fundo Respirando */
+body::before, body::after {
   content: "";
   position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(180,0,255,0.2), transparent 60%);
-  animation: fundoRoxo 10s infinite alternate;
+  width: 150%;
+  height: 150%;
   z-index: 0;
+}
+
+body::before {
+  background: radial-gradient(circle, rgba(180,0,255,0.15), transparent 70%);
+  animation: pulso 8s infinite alternate;
 }
 
 body::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(255,0,0,0.15), transparent 60%);
-  animation: fundoVermelho 10s infinite alternate-reverse;
-  z-index: 0;
+  background: radial-gradient(circle, rgba(255,0,0,0.1), transparent 70%);
+  animation: pulso 12s infinite alternate-reverse;
 }
 
-@keyframes fundoRoxo {
-  0% { transform: translate(-25%, -25%) scale(0.8); opacity: 0.2; }
-  100% { transform: translate(0, 0) scale(1.1); opacity: 0.6; }
+@keyframes pulso {
+  from { transform: scale(0.8); opacity: 0.3; }
+  to { transform: scale(1.2); opacity: 0.6; }
 }
 
-@keyframes fundoVermelho {
-  0% { transform: translate(10%, 10%) scale(1); opacity: 0.1; }
-  100% { transform: translate(-10%, -10%) scale(1.2); opacity: 0.5; }
-}
-
-/* A CAIXA PRINCIPAL */
+/* CAIXA CENTRALIZADA */
 .container {
   position: relative;
   z-index: 1;
-  background: rgba(0,0,0,0.85);
-  
-  /* Centraliza a caixa automaticamente */
-  margin: auto;
-  
-  /* Ajuste de tamanho da caixa */
-  padding: 2.5rem 1.5rem; 
-  border-radius: 30px;
+  background: rgba(0,0,0,0.9);
+  padding: 30px 20px;
+  border-radius: 25px;
   text-align: center;
   
-  /* Largura inteligente: ocupa 85% da tela, mas trava em 350px no máximo */
+  /* Trava o tamanho médio e centraliza */
   width: 85%;
-  max-width: 350px;
+  max-width: 320px; 
   
-  /* Animação que troca a cor (Roxo <-> Vermelho) */
-  animation: boxGlow 5s infinite alternate ease-in-out;
+  /* Animação de cor da borda/brilho */
+  animation: neonCycle 6s infinite alternate ease-in-out;
 }
 
 h1 {
-  /* O SEGREDO: clamp(minimo, ideal, maximo) 
-     Isso impede que o texto fique gigante e saia da caixa */
-  font-size: clamp(1.5rem, 8vw, 2.2rem);
-  
-  margin-bottom: 1.5rem;
-  letter-spacing: 2px;
-  
-  /* Animação do texto */
-  animation: textGlow 5s infinite alternate ease-in-out;
+  /* Tamanho ajustado para não sair da caixa */
+  font-size: 1.8rem; 
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  animation: textCycle 6s infinite alternate ease-in-out;
 }
 
 .botao {
   display: block;
   width: 100%;
-  margin: 15px auto;
-  padding: 15px;
-  font-size: 1.1rem;
+  margin: 12px 0;
+  padding: 14px;
+  font-size: 1rem;
   color: white;
   text-decoration: none;
-  border-radius: 15px;
-  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  border-radius: 12px;
+  background: #0f0f0f;
+  border: 1px solid rgba(255,255,255,0.1);
   transition: 0.3s;
-  
-  /* Animação do botão */
-  animation: buttonGlow 5s infinite alternate ease-in-out;
+  animation: buttonCycle 6s infinite alternate ease-in-out;
 }
 
-.botao:hover {
-  transform: scale(1.05);
-  filter: brightness(1.3);
-}
-
-/* --- ANIMAÇÕES DE CORES (ROXO -> VERMELHO) --- */
-
-@keyframes boxGlow {
-  0% {
-    box-shadow: 0 0 40px rgba(180,0,255,0.6); /* Roxo */
-    border: 1px solid rgba(180,0,255,0.3);
+/* ANIMAÇÕES DE COR (ROXO -> VERMELHO) */
+@keyframes neonCycle {
+  0% { 
+    box-shadow: 0 0 30px rgba(180,0,255,0.6); 
+    border: 1px solid rgba(180,0,255,0.4);
   }
-  100% {
-    box-shadow: 0 0 40px rgba(255,0,0,0.6); /* Vermelho */
-    border: 1px solid rgba(255,0,0,0.3);
+  100% { 
+    box-shadow: 0 0 30px rgba(255,0,50,0.6); 
+    border: 1px solid rgba(255,0,50,0.4);
   }
 }
 
-@keyframes textGlow {
-  0% {
-    color: #c400ff;
-    text-shadow: 0 0 20px rgba(200,0,255,1);
-  }
-  100% {
-    color: #ff0040;
-    text-shadow: 0 0 20px rgba(255,0,60,1);
-  }
+@keyframes textCycle {
+  0% { color: #d649ff; text-shadow: 0 0 15px rgba(180,0,255,1); }
+  100% { color: #ff3b3b; text-shadow: 0 0 15px rgba(255,0,0,1); }
 }
 
-@keyframes buttonGlow {
-  0% {
-    box-shadow: 0 0 15px rgba(160,0,255,0.5);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(255,0,0,0.5);
-  }
+@keyframes buttonCycle {
+  0% { box-shadow: inset 0 0 10px rgba(180,0,255,0.2); }
+  100% { box-shadow: inset 0 0 10px rgba(255,0,0,0.2); }
 }
+
 </style>
 </head>
-
 <body>
 
 <div class="container">
   <h1>RESSONÂNCIA</h1>
-
   <a class="botao" href="personagens.html">Personagens</a>
   <a class="botao" href="mapas.html">Mapas</a>
 </div>
 
 </body>
 </html>
+
