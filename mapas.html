@@ -1,63 +1,74 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
-<meta charset="UTF-8">
-<title>Mapas</title>
+  <meta charset="UTF-8">
+  <title>Mapas</title>
 
-<style>
-body{
-  margin:0;
-  background:black;
-  color:white;
-  font-family:Arial;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  height:100vh;
-}
+  <style>
+    body{
+      margin:0;
+      background:black;
+      color:white;
+      font-family:Arial, sans-serif;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      height:100vh;
+    }
 
-h1{
-  color:#a000ff;
-  margin-bottom:30px;
-}
+    .container{
+      text-align:center;
+      transform: scale(1.3);
+    }
 
-.botao{
-  width:200px;
-  text-align:center;
-  padding:15px;
-  margin:10px;
-  background:#1a1a1a;
-  border-radius:10px;
-  text-decoration:none;
-  color:white;
-  font-size:18px;
-  box-shadow:0 0 20px rgba(160,0,255,0.6);
-  transition:0.3s;
-}
+    h1{
+      color:#a000ff;
+      font-size:52px;
+      letter-spacing:4px;
+      margin-bottom:50px;
+      text-shadow:0 0 25px rgba(160,0,255,0.9);
+    }
 
-.botao:hover{
-  box-shadow:0 0 40px rgba(200,0,255,1);
-  transform:scale(1.05);
-}
+    .botao{
+      display:block;
+      width:340px;
+      padding:28px;
+      margin:25px auto;
+      background:#1a1a1a;
+      border-radius:18px;
+      text-decoration:none;
+      color:white;
+      font-size:28px;
+      box-shadow:0 0 35px rgba(160,0,255,0.8);
+      transition:0.3s;
+    }
 
-.voltar{
-  margin-top:30px;
-  color:#a000ff;
-  text-decoration:none;
-}
-</style>
+    .botao:hover{
+      box-shadow:0 0 70px rgba(200,0,255,1);
+      transform:scale(1.1);
+    }
+
+    .voltar{
+      display:block;
+      margin-top:50px;
+      font-size:20px;
+      color:#a000ff;
+      text-decoration:none;
+    }
+  </style>
 </head>
 
 <body>
 
-<h1>MAPAS</h1>
+  <div class="container">
+    <h1>MAPAS</h1>
 
-<a href="zona1.html" class="botao">Zona 1</a>
-<a href="#" class="botao">Zona 2</a>
-<a href="#" class="botao">Zona 3</a>
+    <a class="botao" href="zona1.html">Zona 1</a>
+    <a class="botao" href="#">Zona 2</a>
+    <a class="botao" href="#">Zona 3</a>
 
-<a href="index.html" class="voltar">← Voltar</a>
+    <a class="voltar" href="index.html">← Voltar</a>
+  </div>
 
 </body>
 </html>
