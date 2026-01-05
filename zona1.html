@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Zona 1</title>
+
+<style>
+body{
+  margin:0;
+  background:black;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  min-height:100vh;
+}
+
+.mapa{
+  max-width:90%;
+  border-radius:15px;
+  box-shadow:0 0 60px rgba(170,0,255,0.9);
+  animation:brilho 2s infinite alternate;
+}
+
+@keyframes brilho{
+  from{
+    box-shadow:0 0 30px rgba(140,0,255,0.5);
+  }
+  to{
+    box-shadow:0 0 70px rgba(200,0,255,1);
+  }
+}
+
+.voltar{
+  margin-top:25px;
+  padding:10px 20px;
+  background:#1a1a1a;
+  color:white;
+  text-decoration:none;
+  border-radius:8px;
+  box-shadow:0 0 20px rgba(160,0,255,0.6);
+}
+</style>
+</head>
+
+<body>
+
+<img src="IMG-20260105-WA0002.jpg" class="mapa">
+
+<a href="mapas.html" class="voltar">← Voltar</a>
+
+</body>
+</html>
