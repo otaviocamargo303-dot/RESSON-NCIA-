@@ -1,50 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Orin</title>
+  <meta charset="UTF-8">
+  <title>Orin</title>
+  <style>
+    body {
+      margin: 0;
+      background: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      animation: fadeIn 0.8s ease;
+    }
 
-<style>
-body{
-  margin:0;
-  background:black;
-  font-family:Arial, sans-serif;
-  text-align:center;
-}
+    img {
+      max-width: 100%;
+      height: auto;
+      box-shadow: 0 0 40px rgba(140, 0, 255, 0.6);
+      animation: glow 2s infinite alternate;
+    }
 
-h1{
-  color:#9b59ff;
-  margin-top:30px;
-  font-size:42px;
-}
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
 
-img{
-  width:90%;
-  max-width:400px;
-  margin:30px auto;
-  border-radius:20px;
-  box-shadow:0 0 25px #6c2eb9;
-}
+    @keyframes glow {
+      from { box-shadow: 0 0 20px rgba(140, 0, 255, 0.4); }
+      to { box-shadow: 0 0 50px rgba(180, 0, 255, 0.9); }
+    }
 
-.voltar{
-  display:inline-block;
-  margin:30px;
-  padding:14px 30px;
-  border:2px solid #f1c40f;
-  color:#f1c40f;
-  text-decoration:none;
-  border-radius:14px;
-}
-</style>
+    .voltar {
+      position: fixed;
+      bottom: 20px;
+      background: #a000ff;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
 </head>
-
 <body>
 
-<h1>ORIN</h1>
+  <img src="Orin_20260102_021654_0000.png" alt="Orin">
 
-<img src="imagens/orin.jpg" alt="Orin">
-
-<a class="voltar" href="personagens.html">← Voltar</a>
+  <a href="index.html" class="voltar">VOLTAR</a>
 
 </body>
 </html>
