@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -60,39 +60,42 @@ body::after {
   position: relative;
   z-index: 1;
   background: rgba(0,0,0,0.85);
-  /* Padding responsivo */
-  padding: 3rem 2rem; 
-  border-radius: 40px;
+  /* Padding reduzido */
+  padding: 2rem 1.5rem; 
+  border-radius: 30px; /* Arredondamento um pouco menor */
   text-align: center;
   
-  /* Largura responsiva para caber no celular */
-  width: 90%;
-  max-width: 500px;
+  /* Largura ajustada para telas menores */
+  width: 85%;
+  max-width: 400px;
   
   /* Animação que troca a cor da caixa */
   animation: boxGlow 5s infinite alternate ease-in-out;
 }
 
 h1 {
-  /* Tamanho de fonte responsivo */
-  font-size: clamp(40px, 10vw, 70px);
-  margin-bottom: 40px;
-  letter-spacing: 4px;
+  /* Tamanho de fonte reduzido e fixo em rem */
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px; /* Espaçamento menor */
   /* Animação que troca a cor do texto */
   animation: textGlow 5s infinite alternate ease-in-out;
+  /* Garante que o texto não saia da caixa */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .botao {
   display: block;
-  /* Largura 100% do pai, com limite máximo */
+  /* Largura 100% do pai */
   width: 100%;
-  max-width: 350px;
-  margin: 20px auto;
-  padding: 20px;
-  font-size: 1.5rem;
+  margin: 15px auto; /* Margem menor */
+  padding: 15px; /* Padding menor */
+  font-size: 1.1rem; /* Fonte menor */
   color: white;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 15px; /* Arredondamento menor */
   background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
   transition: 0.3s;
   
@@ -110,11 +113,11 @@ h1 {
 /* 1. Brilho da Caixa (Container) */
 @keyframes boxGlow {
   0% {
-    box-shadow: 0 0 60px rgba(180,0,255,0.8); /* Roxo */
+    box-shadow: 0 0 40px rgba(180,0,255,0.6); /* Roxo, brilho menor */
     border: 1px solid rgba(180,0,255,0.3);
   }
   100% {
-    box-shadow: 0 0 60px rgba(255,0,0,0.8); /* Vermelho */
+    box-shadow: 0 0 40px rgba(255,0,0,0.6); /* Vermelho, brilho menor */
     border: 1px solid rgba(255,0,0,0.3);
   }
 }
@@ -123,21 +126,21 @@ h1 {
 @keyframes textGlow {
   0% {
     color: #c400ff;
-    text-shadow: 0 0 30px rgba(200,0,255,1);
+    text-shadow: 0 0 20px rgba(200,0,255,1); /* Sombra menor */
   }
   100% {
     color: #ff0040;
-    text-shadow: 0 0 30px rgba(255,0,60,1);
+    text-shadow: 0 0 20px rgba(255,0,60,1); /* Sombra menor */
   }
 }
 
 /* 3. Brilho do Botão */
 @keyframes buttonGlow {
   0% {
-    box-shadow: 0 0 20px rgba(160,0,255,0.5);
+    box-shadow: 0 0 15px rgba(160,0,255,0.5); /* Sombra menor */
   }
   100% {
-    box-shadow: 0 0 20px rgba(255,0,0,0.5);
+    box-shadow: 0 0 15px rgba(255,0,0,0.5); /* Sombra menor */
   }
 }
 
