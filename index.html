@@ -1,111 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Ressonância</title>
+  <meta charset="UTF-8">
 
-<style>
-/* RESET */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <!-- ISSO AQUI É O MAIS IMPORTANTE PRO CELULAR -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-/* FUNDO COM PULSAÇÕES REAIS */
-body {
-  min-height: 100vh;
-  background: black;
-  color: white;
-  font-family: Arial, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  position: relative;
-}
+  <title>RESSONÂNCIA</title>
 
-/* CAMADA ROXA */
-body::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: radial-gradient(circle, rgba(160,0,255,0.35), transparent 60%);
-  animation: pulsoRoxo 6s infinite alternate;
-}
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: #9b59ff;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      font-size: 18px;
+    }
 
-/* CAMADA VERMELHA */
-body::after {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: radial-gradient(circle, rgba(255,0,80,0.25), transparent 60%);
-  animation: pulsoVermelho 8s infinite alternate;
-}
+    h1 {
+      font-size: 48px;
+      margin-top: 40px;
+      letter-spacing: 2px;
+    }
 
-@keyframes pulsoRoxo {
-  0% { transform: scale(0.9); opacity: 0.4; }
-  100% { transform: scale(1.2); opacity: 0.8; }
-}
+    p {
+      font-size: 20px;
+      margin: 20px;
+    }
 
-@keyframes pulsoVermelho {
-  0% { transform: scale(1.1); opacity: 0.2; }
-  100% { transform: scale(1.4); opacity: 0.6; }
-}
+    a {
+      display: inline-block;
+      margin-top: 25px;
+      font-size: 22px;
+      color: #f1c40f;
+      text-decoration: none;
+      border: 2px solid #f1c40f;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
 
-/* CONTEÚDO FICA ACIMA */
-.container {
-  position: relative;
-  z-index: 10;
-  background: rgba(0,0,0,0.7);
-  padding: 50px;
-  border-radius: 25px;
-  box-shadow: 0 0 80px rgba(160,0,255,0.9);
-  text-align: center;
-}
-
-/* TÍTULO */
-h1 {
-  font-size: 52px;
-  color: #b000ff;
-  margin-bottom: 40px;
-  text-shadow: 0 0 30px rgba(180,0,255,1);
-}
-
-/* BOTÕES */
-.botao {
-  display: block;
-  width: 300px;
-  margin: 18px auto;
-  padding: 20px;
-  background: #1a1a1a;
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  border-radius: 15px;
-  box-shadow: 0 0 25px rgba(160,0,255,0.7);
-  transition: 0.3s;
-}
-
-.botao:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 50px rgba(200,0,255,1);
-}
-</style>
+    a:hover {
+      background: #f1c40f;
+      color: black;
+    }
+  </style>
 </head>
 
 <body>
-
-<div class="container">
   <h1>RESSONÂNCIA</h1>
+  <p><strong>RPG privado</strong></p>
+  <p>Se você tem o link, você foi convidado.</p>
 
-  <a class="botao" href="ravena.html">Ravena</a>
-  <a class="botao" href="orin.html">Orin</a>
-  <a class="botao" href="mikaza.html">Mikaza</a>
-  <a class="botao" href="drakar.html">Drakar</a>
-
-  <a class="botao" href="mapas.html">Mapas</a>
-</div>
-
+  <a href="personagens.html">Personagens</a>
 </body>
 </html>
