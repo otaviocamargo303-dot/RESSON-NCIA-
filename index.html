@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
@@ -6,6 +6,7 @@
 <title>Ressonância</title>
 
 <style>
+/* Zera tudo para evitar bordas brancas estranhas */
 * {
   margin: 0;
   padding: 0;
@@ -13,18 +14,21 @@
 }
 
 body {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100vh; /* Ocupa a altura total da tela */
   background: black;
   font-family: Arial, sans-serif;
+  
+  /* Centralização Flexbox */
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  
+  overflow: hidden; /* Bloqueia rolagem indesejada */
   position: relative;
 }
 
-/* Fundo animado - Mantive suave, mas alternando levemente */
+/* Fundo Animado (Roxo e Vermelho) */
 body::before {
   content: "";
   position: absolute;
@@ -55,51 +59,53 @@ body::after {
   100% { transform: translate(-10%, -10%) scale(1.2); opacity: 0.5; }
 }
 
-/* CONTAINER */
+/* A CAIXA PRINCIPAL */
 .container {
   position: relative;
   z-index: 1;
   background: rgba(0,0,0,0.85);
-  /* Padding reduzido */
-  padding: 2rem 1.5rem; 
-  border-radius: 30px; /* Arredondamento um pouco menor */
+  
+  /* Centraliza a caixa automaticamente */
+  margin: auto;
+  
+  /* Ajuste de tamanho da caixa */
+  padding: 2.5rem 1.5rem; 
+  border-radius: 30px;
   text-align: center;
   
-  /* Largura ajustada para telas menores */
+  /* Largura inteligente: ocupa 85% da tela, mas trava em 350px no máximo */
   width: 85%;
-  max-width: 400px;
+  max-width: 350px;
   
-  /* Animação que troca a cor da caixa */
+  /* Animação que troca a cor (Roxo <-> Vermelho) */
   animation: boxGlow 5s infinite alternate ease-in-out;
 }
 
 h1 {
-  /* Tamanho de fonte reduzido e fixo em rem */
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  letter-spacing: 2px; /* Espaçamento menor */
-  /* Animação que troca a cor do texto */
+  /* O SEGREDO: clamp(minimo, ideal, maximo) 
+     Isso impede que o texto fique gigante e saia da caixa */
+  font-size: clamp(1.5rem, 8vw, 2.2rem);
+  
+  margin-bottom: 1.5rem;
+  letter-spacing: 2px;
+  
+  /* Animação do texto */
   animation: textGlow 5s infinite alternate ease-in-out;
-  /* Garante que o texto não saia da caixa */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 .botao {
   display: block;
-  /* Largura 100% do pai */
   width: 100%;
-  margin: 15px auto; /* Margem menor */
-  padding: 15px; /* Padding menor */
-  font-size: 1.1rem; /* Fonte menor */
+  margin: 15px auto;
+  padding: 15px;
+  font-size: 1.1rem;
   color: white;
   text-decoration: none;
-  border-radius: 15px; /* Arredondamento menor */
+  border-radius: 15px;
   background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
   transition: 0.3s;
   
-  /* Animação que troca a cor da borda/sombra do botão */
+  /* Animação do botão */
   animation: buttonGlow 5s infinite alternate ease-in-out;
 }
 
@@ -108,42 +114,38 @@ h1 {
   filter: brightness(1.3);
 }
 
-/* --- ANIMAÇÕES DE TROCA DE COR --- */
+/* --- ANIMAÇÕES DE CORES (ROXO -> VERMELHO) --- */
 
-/* 1. Brilho da Caixa (Container) */
 @keyframes boxGlow {
   0% {
-    box-shadow: 0 0 40px rgba(180,0,255,0.6); /* Roxo, brilho menor */
+    box-shadow: 0 0 40px rgba(180,0,255,0.6); /* Roxo */
     border: 1px solid rgba(180,0,255,0.3);
   }
   100% {
-    box-shadow: 0 0 40px rgba(255,0,0,0.6); /* Vermelho, brilho menor */
+    box-shadow: 0 0 40px rgba(255,0,0,0.6); /* Vermelho */
     border: 1px solid rgba(255,0,0,0.3);
   }
 }
 
-/* 2. Brilho do Texto (H1) */
 @keyframes textGlow {
   0% {
     color: #c400ff;
-    text-shadow: 0 0 20px rgba(200,0,255,1); /* Sombra menor */
+    text-shadow: 0 0 20px rgba(200,0,255,1);
   }
   100% {
     color: #ff0040;
-    text-shadow: 0 0 20px rgba(255,0,60,1); /* Sombra menor */
+    text-shadow: 0 0 20px rgba(255,0,60,1);
   }
 }
 
-/* 3. Brilho do Botão */
 @keyframes buttonGlow {
   0% {
-    box-shadow: 0 0 15px rgba(160,0,255,0.5); /* Sombra menor */
+    box-shadow: 0 0 15px rgba(160,0,255,0.5);
   }
   100% {
-    box-shadow: 0 0 15px rgba(255,0,0,0.5); /* Sombra menor */
+    box-shadow: 0 0 15px rgba(255,0,0,0.5);
   }
 }
-
 </style>
 </head>
 
