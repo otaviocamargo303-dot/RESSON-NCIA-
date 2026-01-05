@@ -1,59 +1,121 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
+<meta charset="UTF-8">
+<title>Ressonância</title>
 
-  <!-- ISSO AQUI É O MAIS IMPORTANTE PRO CELULAR -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  <title>RESSONÂNCIA</title>
+/* FUNDO */
+body {
+  min-height: 100vh;
+  background: black;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      background: black;
-      color: #9b59ff;
-      font-family: Arial, sans-serif;
-      text-align: center;
-      font-size: 18px;
-    }
+/* PULSO ROXO */
+body::before {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle at center, rgba(180,0,255,0.45), transparent 65%);
+  animation: pulsoRoxo 5s infinite ease-in-out;
+}
 
-    h1 {
-      font-size: 48px;
-      margin-top: 40px;
-      letter-spacing: 2px;
-    }
+/* PULSO VERMELHO */
+body::after {
+  content: "";
+  position: absolute;
+  inset: -60%;
+  background: radial-gradient(circle at center, rgba(255,0,80,0.35), transparent 65%);
+  animation: pulsoVermelho 7s infinite ease-in-out;
+}
 
-    p {
-      font-size: 20px;
-      margin: 20px;
-    }
+@keyframes pulsoRoxo {
+  0% { transform: scale(0.8); opacity: 0.4; }
+  50% { transform: scale(1.2); opacity: 0.9; }
+  100% { transform: scale(0.8); opacity: 0.4; }
+}
 
-    a {
-      display: inline-block;
-      margin-top: 25px;
-      font-size: 22px;
-      color: #f1c40f;
-      text-decoration: none;
-      border: 2px solid #f1c40f;
-      padding: 10px 20px;
-      border-radius: 10px;
-    }
+@keyframes pulsoVermelho {
+  0% { transform: scale(1.3); opacity: 0.3; }
+  50% { transform: scale(0.9); opacity: 0.7; }
+  100% { transform: scale(1.3); opacity: 0.3; }
+}
 
-    a:hover {
-      background: #f1c40f;
-      color: black;
-    }
-  </style>
+/* CONTAINER */
+.container {
+  position: relative;
+  z-index: 10;
+  background: rgba(0,0,0,0.75);
+  padding: 70px 80px;
+  border-radius: 35px;
+  box-shadow:
+    0 0 60px rgba(180,0,255,1),
+    0 0 120px rgba(255,0,80,0.6);
+  text-align: center;
+}
+
+/* TÍTULO */
+h1 {
+  font-size: 64px;
+  color: #c000ff;
+  margin-bottom: 50px;
+  letter-spacing: 4px;
+  text-shadow:
+    0 0 20px rgba(200,0,255,1),
+    0 0 50px rgba(200,0,255,0.8);
+}
+
+/* BOTÕES */
+.botao {
+  display: block;
+  width: 360px;
+  margin: 22px auto;
+  padding: 24px;
+  background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+  color: white;
+  text-decoration: none;
+  font-size: 26px;
+  border-radius: 18px;
+  box-shadow:
+    0 0 20px rgba(160,0,255,0.6),
+    inset 0 0 10px rgba(160,0,255,0.4);
+  transition: all 0.3s ease;
+}
+
+.botao:hover {
+  transform: scale(1.12);
+  box-shadow:
+    0 0 40px rgba(200,0,255,1),
+    0 0 80px rgba(255,0,80,0.8);
+}
+</style>
 </head>
 
 <body>
-  <h1>RESSONÂNCIA</h1>
-  <p><strong>RPG privado</strong></p>
-  <p>Se você tem o link, você foi convidado.</p>
 
-  <a href="personagens.html">Personagens</a>
+<div class="container">
+  <h1>RESSONÂNCIA</h1>
+
+  <a class="botao" href="ravena.html">Ravena</a>
+  <a class="botao" href="orin.html">Orin</a>
+  <a class="botao" href="mikaza.html">Mikaza</a>
+  <a class="botao" href="drakar.html">Drakar</a>
+  <a class="botao" href="mapas.html">Mapas</a>
+</div>
+
 </body>
 </html>
-<a href="mapas.html" class="botao">MAPAS</a>
