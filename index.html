@@ -2,135 +2,109 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ressonância</title>
 
 <style>
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* FUNDO BASE */
 body {
-  min-height: 100vh;
+  width: 100vw;
+  height: 100vh;
   background: black;
   font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow: hidden;
   position: relative;
 }
 
-/* PULSAR ROXO */
-body::before {
-  content: "";
-  position: absolute;
-  inset: -50%;
-  background: radial-gradient(circle at center,
-    rgba(180, 0, 255, 0.45),
-    transparent 60%);
-  animation: pulsoRoxo 7s ease-in-out infinite alternate;
-}
-
-/* PULSAR VERMELHO */
+/* PULSOS */
+body::before,
 body::after {
   content: "";
   position: absolute;
   inset: -50%;
-  background: radial-gradient(circle at center,
-    rgba(255, 0, 80, 0.35),
-    transparent 60%);
-  animation: pulsoVermelho 9s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+body::before {
+  background: radial-gradient(circle, rgba(180,0,255,0.45), transparent 65%);
+  animation: pulsoRoxo 6s infinite ease-in-out;
+}
+
+body::after {
+  background: radial-gradient(circle, rgba(255,0,80,0.35), transparent 65%);
+  animation: pulsoVermelho 8s infinite ease-in-out;
 }
 
 @keyframes pulsoRoxo {
-  0% { transform: scale(0.9); opacity: 0.3; }
-  100% { transform: scale(1.3); opacity: 0.8; }
+  0%,100% { transform: scale(0.9); opacity: 0.5; }
+  50% { transform: scale(1.2); opacity: 0.9; }
 }
 
 @keyframes pulsoVermelho {
-  0% { transform: scale(1.1); opacity: 0.2; }
-  100% { transform: scale(1.5); opacity: 0.6; }
+  0%,100% { transform: scale(1.3); opacity: 0.4; }
+  50% { transform: scale(0.9); opacity: 0.8; }
 }
 
-/* WRAPPER CENTRAL */
-.wrapper {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-}
-
-/* CARD PRINCIPAL */
+/* CONTAINER */
 .container {
-  background: rgba(0, 0, 0, 0.75);
-  padding: 70px 80px;
-  border-radius: 30px;
+  position: relative;
+  z-index: 1;
+  background: rgba(0,0,0,0.75);
+  padding: 80px 90px;
+  border-radius: 40px;
   text-align: center;
   box-shadow:
-    0 0 80px rgba(180, 0, 255, 0.9),
-    inset 0 0 40px rgba(180, 0, 255, 0.3);
+    0 0 80px rgba(180,0,255,1),
+    0 0 140px rgba(255,0,80,0.6);
 }
 
-/* TÍTULO */
 h1 {
-  font-size: 64px;
-  margin-bottom: 50px;
-  color: #c000ff;
-  text-shadow: 0 0 35px rgba(200, 0, 255, 1);
-  letter-spacing: 3px;
+  font-size: 70px;
+  color: #c400ff;
+  margin-bottom: 60px;
+  letter-spacing: 4px;
+  text-shadow: 0 0 40px rgba(200,0,255,1);
 }
 
-/* BOTÕES */
 .botao {
   display: block;
-  width: 320px;
-  margin: 20px auto;
-  padding: 22px;
-  font-size: 24px;
+  width: 420px;
+  margin: 25px auto;
+  padding: 26px;
+  font-size: 28px;
   color: white;
-  background: #1a1a1a;
   text-decoration: none;
-  border-radius: 16px;
-  box-shadow: 0 0 25px rgba(180, 0, 255, 0.7);
-  transition: all 0.3s ease;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+  box-shadow:
+    0 0 30px rgba(160,0,255,0.7),
+    inset 0 0 15px rgba(160,0,255,0.4);
+  transition: 0.3s;
 }
 
 .botao:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 60px rgba(220, 0, 255, 1);
-}
-
-/* RESPONSIVO */
-@media (max-width: 600px) {
-  .container {
-    padding: 50px 40px;
-  }
-
-  h1 {
-    font-size: 48px;
-  }
-
-  .botao {
-    width: 260px;
-    font-size: 20px;
-  }
+  transform: scale(1.12);
+  box-shadow:
+    0 0 60px rgba(200,0,255,1),
+    0 0 120px rgba(255,0,80,0.8);
 }
 </style>
 </head>
 
 <body>
 
-<div class="wrapper">
-  <div class="container">
-    <h1>RESSONÂNCIA</h1>
+<div class="container">
+  <h1>RESSONÂNCIA</h1>
 
-    <a class="botao" href="personagens.html">Personagens</a>
-    <a class="botao" href="mapas.html">Mapas</a>
-  </div>
+  <a class="botao" href="personagens.html">Personagens</a>
+  <a class="botao" href="mapas.html">Mapas</a>
 </div>
 
 </body>
