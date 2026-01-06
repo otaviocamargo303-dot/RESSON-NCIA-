@@ -1,151 +1,178 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <title>Personagens — Ressonância</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personagens</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    body {
-      width: 100vw;
-      height: 100vh;
-      background: url("img/Resso000.png") no-repeat center center fixed;
-      background-size: cover;
-      overflow: hidden;
-      color: white;
-    }
+body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
 
-    /* camada escura para leitura */
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.45);
-      z-index: 0;
-    }
+  /* FUNDO COM IMAGEM */
+  background: 
+    radial-gradient(circle at center, rgba(160,0,255,0.25), rgba(0,0,0,0.9)),
+    url("img/cristal.png") center / cover no-repeat fixed;
+}
 
-    .container {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding-left: 6vw;
-    }
+/* ANIMAÇÃO DE PULSAÇÃO */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(255,0,120,0.25), transparent 60%);
+  animation: pulse 8s infinite alternate;
+  pointer-events: none;
+}
 
-    .painel {
-      width: 40vw;
-      max-width: 420px;
-    }
+@keyframes pulse {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.5; }
+  100% { opacity: 0.25; }
+}
 
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 40px;
-    }
+.container {
+  width: 100%;
+  max-width: 520px;
+  padding: 40px 20px 140px;
+  backdrop-filter: blur(6px);
+}
 
-    .lista {
-      display: flex;
-      flex-direction: column;
-      gap: 28px;
-    }
+/* TÍTULO */
+h1 {
+  text-align: center;
+  font-size: 52px;
+  color: #ffffff;
+  text-shadow: 0 0 25px #a200ff;
+  margin-bottom: 10px;
+}
 
-    .item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 2px solid rgba(255,255,255,0.7);
-      padding-bottom: 6px;
-    }
+.subtitle {
+  text-align: center;
+  font-size: 18px;
+  color: #e6d6ff;
+  margin-bottom: 40px;
+}
 
-    .item a {
-      text-decoration: none;
-      color: white;
-      font-size: 2rem;
-      transition: 0.3s;
-    }
+/* LISTA */
+.lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
 
-    .item a:hover {
-      text-shadow: 0 0 10px #b36bff;
-    }
+.linha {
+  display: flex;
+  gap: 14px;
+}
 
-    .botao-f {
-      background: white;
-      color: black;
-      border-radius: 999px;
-      width: 44px;
-      height: 28px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      opacity: 0.9;
-    }
+/* BOTÃO NOME */
+.nome {
+  flex: 1;
+  padding: 20px;
+  font-size: 24px;
+  border-radius: 14px;
+  text-decoration: none;
+  color: white;
+  background: linear-gradient(135deg, #6a00ff, #b84cff);
+  text-align: center;
+  box-shadow: 0 0 20px rgba(170,0,255,0.9);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
 
-    /* MOBILE */
-    @media (max-width: 768px) {
-      .container {
-        padding-left: 8vw;
-      }
+.nome:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(200,0,255,1);
+}
 
-      .painel {
-        width: 80vw;
-      }
+/* BOTÃO F */
+.ficha {
+  width: 72px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #ff0077, #b000ff);
+  color: white;
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255,0,200,0.9);
+  transition: transform 0.2s;
+}
 
-      h1 {
-        font-size: 2.5rem;
-      }
+.ficha:hover {
+  transform: scale(1.1);
+}
 
-      .item a {
-        font-size: 1.7rem;
-      }
-    }
-  </style>
+/* BOTÃO VOLTAR */
+.voltar {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff0077, #7b00ff);
+  color: white;
+  font-size: 22px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 30px rgba(255,0,200,0.9);
+}
+</style>
 </head>
 
 <body>
 
-  <div class="container">
-    <div class="painel">
+<div class="container">
 
-      <h1>Personagens</h1>
+  <h1>Personagens</h1>
+  <div class="subtitle">Os que andaram pela Ressonância</div>
 
-      <div class="lista">
+  <div class="lista">
 
-        <div class="item">
-          <a href="drakar.html">Drakar</a>
-          <div class="botao-f">F</div>
-        </div>
-
-        <div class="item">
-          <a href="ravena.html">Ravena</a>
-          <div class="botao-f">F</div>
-        </div>
-
-        <div class="item">
-          <a href="mikaza.html">Mikaza</a>
-          <div class="botao-f">F</div>
-        </div>
-
-        <div class="item">
-          <a href="orin.html">Orin</a>
-          <div class="botao-f">F</div>
-        </div>
-
-        <div class="item">
-          <a href="ravik.html">Ravik</a>
-          <div class="botao-f">F</div>
-        </div>
-
-      </div>
+    <div class="linha">
+      <a class="nome" href="drakar.html">Drakar</a>
+      <a class="ficha" href="drakar_habilidades.html">F</a>
     </div>
+
+    <div class="linha">
+      <a class="nome" href="ravena.html">Ravena</a>
+      <a class="ficha" href="ravena_habilidades.html">F</a>
+    </div>
+
+    <div class="linha">
+      <a class="nome" href="mikaza.html">Mikaza</a>
+      <a class="ficha" href="mikaza_habilidades.html">F</a>
+    </div>
+
+    <div class="linha">
+      <a class="nome" href="orin.html">Orin</a>
+      <a class="ficha" href="orin_habilidades.html">F</a>
+    </div>
+
+    <div class="linha">
+      <a class="nome" href="ravik.html">Ravik</a>
+      <a class="ficha" href="ravik_habilidades.html">F</a>
+    </div>
+
   </div>
+</div>
+
+<a class="voltar" href="index.html">Voltar</a>
 
 </body>
-  </html>
+</html>
