@@ -1,118 +1,71 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Personagens — Ressonância</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personagens</title>
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+<style>
+body {
+  margin: 0;
+  height: 100vh;
+  background: url("Resso000.png") center / cover no-repeat fixed;
+  color: white;
+  font-family: Arial, sans-serif;
+}
 
-    body {
-      min-height: 100vh;
-      background: url("img/Resso000.png") no-repeat center center fixed;
-      background-size: cover;
-      color: white;
-    }
+.menu {
+  padding: 40px;
+}
 
-    .overlay {
-      min-height: 100vh;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 24px;
-    }
+h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
 
-    h1 {
-      font-size: 42px;
-      margin-bottom: 30px;
-    }
+.item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
 
-    .lista {
-      max-width: 360px;
-    }
+.item a {
+  color: white;
+  text-decoration: none;
+  font-size: 28px;
+  border-bottom: 2px solid white;
+  width: 200px;
+}
 
-    .linha {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 22px;
-      border-bottom: 2px solid white;
-      padding-bottom: 6px;
-    }
-
-    .linha a {
-      text-decoration: none;
-      color: white;
-      font-size: 28px;
-    }
-
-    .linha a:hover {
-      opacity: 0.8;
-    }
-
-    .botao-f {
-      width: 46px;
-      height: 30px;
-      background: white;
-      color: black;
-      border-radius: 999px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-      font-size: 16px;
-      user-select: none;
-    }
-
-    /* Mobile */
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 34px;
-      }
-
-      .linha a {
-        font-size: 24px;
-      }
-    }
-  </style>
+.f {
+  margin-left: 20px;
+  background: white;
+  color: black;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: bold;
+}
+</style>
 </head>
 
 <body>
-  <div class="overlay">
-
+  <div class="menu">
     <h1>Personagens</h1>
 
-    <div class="lista">
+    <div class="item">
+      <a href="drakar.html">Drakar</a><div class="f">F</div>
+    </div>
 
-      <div class="linha">
-        <a href="drakar.html">Drakar</a>
-        <div class="botao-f">F</div>
-      </div>
+    <div class="item">
+      <a href="ravena.html">Ravena</a><div class="f">F</div>
+    </div>
 
-      <div class="linha">
-        <a href="ravena.html">Ravena</a>
-        <div class="botao-f">F</div>
-      </div>
+    <div class="item">
+      <a href="mikaza.html">Mikaza</a><div class="f">F</div>
+    </div>
 
-      <div class="linha">
-        <a href="mikaza.html">Mikaza</a>
-        <div class="botao-f">F</div>
-      </div>
-
-      <div class="linha">
-        <a href="orin.html">Orin</a>
-        <div class="botao-f">F</div>
-      </div>
-
-      <div class="linha">
-        <a href="ravik.html">Ravik</a>
-        <div class="botao-f">F</div>
-      </div>
-
+    <div class="item">
+      <a href="orin.html">Orin</a><div class="f">F</div>
     </div>
 
   </div>
