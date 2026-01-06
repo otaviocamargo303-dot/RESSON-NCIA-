@@ -1,8 +1,7 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personagens</title>
 
 <style>
@@ -10,94 +9,83 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background: radial-gradient(circle at top, #2b2b2b, #000);
-  font-family: Arial, sans-serif;
+  width: 100vw;
+  height: 100vh;
+  background: url("img/fundo.jpg") no-repeat center center;
+  background-size: cover;
   color: white;
-  display: flex;
-  justify-content: center;
+  overflow: hidden;
 }
 
+/* CONTAINER GERAL */
 .container {
-  width: 100%;
-  max-width: 420px;
-  padding: 30px 20px 120px;
+  display: flex;
+  height: 100%;
+  padding: 60px;
 }
 
-/* TÍTULOS */
-h1 {
-  text-align: center;
-  font-size: 48px;
-  color: #ff00cc;
-  margin-bottom: 10px;
+/* LADO ESQUERDO */
+.left {
+  width: 40%;
 }
 
-.subtitle {
-  text-align: center;
-  font-size: 18px;
-  color: #8f7cff;
+.left h1 {
+  font-size: 64px;
   margin-bottom: 40px;
 }
 
-/* LISTA DE PERSONAGENS */
-.lista {
+/* LISTA */
+.personagem {
   display: flex;
-  flex-direction: column;
-  gap: 18px;
+  align-items: center;
+  margin-bottom: 30px;
 }
 
-.linha {
-  display: flex;
-  gap: 12px;
-}
-
-/* BOTÃO NOME */
 .nome {
-  flex: 1;
-  padding: 18px;
-  font-size: 22px;
-  border-radius: 12px;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, #6a5acd, #9aa7ff);
-  text-align: center;
-  box-shadow: 0 0 15px rgba(120,120,255,0.6);
+  font-size: 36px;
+  width: 220px;
+  border-bottom: 3px solid white;
+  padding-bottom: 5px;
 }
 
 /* BOTÃO F */
-.ficha {
+.btn-f {
+  margin-left: 30px;
   width: 70px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, #ff00aa, #b000ff);
-  color: white;
-  font-size: 26px;
+  height: 45px;
+  border-radius: 30px;
+  background: white;
+  color: black;
+  font-size: 22px;
   font-weight: bold;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 15px rgba(255,0,200,0.7);
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-/* BOTÃO VOLTAR */
-.voltar {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff00aa, #b000ff);
+.btn-f:hover {
+  background: #c084fc;
   color: white;
-  font-size: 22px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 25px rgba(255,0,200,0.8);
+  box-shadow: 0 0 15px #c084fc;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left {
+    width: 100%;
+  }
+
+  .nome {
+    font-size: 28px;
+  }
 }
 </style>
 </head>
@@ -105,41 +93,36 @@ h1 {
 <body>
 
 <div class="container">
+  <div class="left">
+    <h1>Personagens</h1>
 
-  <h1>Personagens</h1>
-  <div class="subtitle">Os que andaram pela Ressonância</div>
-
-  <div class="lista">
-
-    <div class="linha">
-      <a class="nome" href="drakar.html">Drakar</a>
-      <a class="ficha" href="drakar_habilidades.html">F</a>
+    <div class="personagem">
+      <div class="nome">Drakar</div>
+      <button class="btn-f" onclick="location.href='ficha-drakar.html'">F</button>
     </div>
 
-    <div class="linha">
-      <a class="nome" href="ravena.html">Ravena</a>
-      <a class="ficha" href="ravena_habilidades.html">F</a>
+    <div class="personagem">
+      <div class="nome">Ravena</div>
+      <button class="btn-f" onclick="location.href='ficha-ravena.html'">F</button>
     </div>
 
-    <div class="linha">
-      <a class="nome" href="mikaza.html">Mikaza</a>
-      <a class="ficha" href="mikaza_habilidades.html">F</a>
+    <div class="personagem">
+      <div class="nome">Mikaza</div>
+      <button class="btn-f" onclick="location.href='ficha-mikaza.html'">F</button>
     </div>
 
-    <div class="linha">
-      <a class="nome" href="orin.html">Orin</a>
-      <a class="ficha" href="orin_habilidades.html">F</a>
+    <div class="personagem">
+      <div class="nome">Orin</div>
+      <button class="btn-f" onclick="location.href='ficha-orin.html'">F</button>
     </div>
 
-    <div class="linha">
-      <a class="nome" href="ravik.html">Ravik</a>
-      <a class="ficha" href="ravik_habilidades.html">F</a>
+    <div class="personagem">
+      <div class="nome">Ravik</div>
+      <button class="btn-f" onclick="location.href='ficha-ravik.html'">F</button>
     </div>
 
   </div>
 </div>
-
-<a class="voltar" href="index.html">Voltar</a>
 
 </body>
 </html>
