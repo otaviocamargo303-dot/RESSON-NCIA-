@@ -1,73 +1,151 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Personagens</title>
+  <meta charset="UTF-8">
+  <title>Personagens — Ressonância</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body {
-  margin: 0;
-  height: 100vh;
-  background: url("Resso000.png") center / cover no-repeat fixed;
-  color: white;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-.menu {
-  padding: 40px;
-}
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: url("img/Resso000.png") no-repeat center center fixed;
+      background-size: cover;
+      overflow: hidden;
+      color: white;
+    }
 
-h1 {
-  font-size: 48px;
-  margin-bottom: 30px;
-}
+    /* camada escura para leitura */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+      z-index: 0;
+    }
 
-.item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 25px;
-}
+    .container {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      padding-left: 6vw;
+    }
 
-.item a {
-  color: white;
-  text-decoration: none;
-  font-size: 28px;
-  border-bottom: 2px solid white;
-  width: 200px;
-}
+    .painel {
+      width: 40vw;
+      max-width: 420px;
+    }
 
-.f {
-  margin-left: 20px;
-  background: white;
-  color: black;
-  padding: 8px 18px;
-  border-radius: 20px;
-  font-weight: bold;
-}
-</style>
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+    }
+
+    .lista {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid rgba(255,255,255,0.7);
+      padding-bottom: 6px;
+    }
+
+    .item a {
+      text-decoration: none;
+      color: white;
+      font-size: 2rem;
+      transition: 0.3s;
+    }
+
+    .item a:hover {
+      text-shadow: 0 0 10px #b36bff;
+    }
+
+    .botao-f {
+      background: white;
+      color: black;
+      border-radius: 999px;
+      width: 44px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      opacity: 0.9;
+    }
+
+    /* MOBILE */
+    @media (max-width: 768px) {
+      .container {
+        padding-left: 8vw;
+      }
+
+      .painel {
+        width: 80vw;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      .item a {
+        font-size: 1.7rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <div class="menu">
-    <h1>Personagens</h1>
 
-    <div class="item">
-      <a href="drakar.html">Drakar</a><div class="f">F</div>
+  <div class="container">
+    <div class="painel">
+
+      <h1>Personagens</h1>
+
+      <div class="lista">
+
+        <div class="item">
+          <a href="drakar.html">Drakar</a>
+          <div class="botao-f">F</div>
+        </div>
+
+        <div class="item">
+          <a href="ravena.html">Ravena</a>
+          <div class="botao-f">F</div>
+        </div>
+
+        <div class="item">
+          <a href="mikaza.html">Mikaza</a>
+          <div class="botao-f">F</div>
+        </div>
+
+        <div class="item">
+          <a href="orin.html">Orin</a>
+          <div class="botao-f">F</div>
+        </div>
+
+        <div class="item">
+          <a href="ravik.html">Ravik</a>
+          <div class="botao-f">F</div>
+        </div>
+
+      </div>
     </div>
-
-    <div class="item">
-      <a href="ravena.html">Ravena</a><div class="f">F</div>
-    </div>
-
-    <div class="item">
-      <a href="mikaza.html">Mikaza</a><div class="f">F</div>
-    </div>
-
-    <div class="item">
-      <a href="orin.html">Orin</a><div class="f">F</div>
-    </div>
-
   </div>
+
 </body>
-</html>
+  </html>
