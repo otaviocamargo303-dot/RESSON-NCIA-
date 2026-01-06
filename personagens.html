@@ -14,92 +14,60 @@
 
 body {
   min-height: 100vh;
+  background: radial-gradient(circle at center, #2a0033, #000);
   font-family: Arial, sans-serif;
   color: white;
-  display: flex;
-  justify-content: center;
-
-  /* FUNDO COM IMAGEM */
-  background: 
-    radial-gradient(circle at center, rgba(160,0,255,0.25), rgba(0,0,0,0.9)),
-    url("img/cristal.png") center / cover no-repeat fixed;
-}
-
-/* ANIMAÇÃO DE PULSAÇÃO */
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: radial-gradient(circle at center, rgba(255,0,120,0.25), transparent 60%);
-  animation: pulse 8s infinite alternate;
-  pointer-events: none;
-}
-
-@keyframes pulse {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.5; }
-  100% { opacity: 0.25; }
 }
 
 .container {
   width: 100%;
-  max-width: 520px;
-  padding: 40px 20px 140px;
-  backdrop-filter: blur(6px);
+  max-width: 420px;
+  padding: 30px 20px 120px;
+  margin: auto;
 }
 
-/* TÍTULO */
 h1 {
   text-align: center;
-  font-size: 52px;
-  color: #ffffff;
-  text-shadow: 0 0 25px #a200ff;
+  font-size: 46px;
   margin-bottom: 10px;
 }
 
 .subtitle {
   text-align: center;
-  font-size: 18px;
-  color: #e6d6ff;
+  font-size: 16px;
+  opacity: 0.8;
   margin-bottom: 40px;
 }
 
-/* LISTA */
 .lista {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 22px;
 }
 
 .linha {
   display: flex;
+  align-items: center;
   gap: 14px;
 }
 
-/* BOTÃO NOME */
 .nome {
   flex: 1;
-  padding: 20px;
-  font-size: 24px;
+  padding: 18px;
+  font-size: 22px;
   border-radius: 14px;
   text-decoration: none;
   color: white;
   background: linear-gradient(135deg, #6a00ff, #b84cff);
   text-align: center;
-  box-shadow: 0 0 20px rgba(170,0,255,0.9);
-  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 18px rgba(160,80,255,0.8);
 }
 
-.nome:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 35px rgba(200,0,255,1);
-}
-
-/* BOTÃO F */
 .ficha {
-  width: 72px;
+  width: 70px;
+  height: 60px;
   border-radius: 14px;
-  background: linear-gradient(135deg, #ff0077, #b000ff);
+  background: linear-gradient(135deg, #ff00aa, #a000ff);
   color: white;
   font-size: 26px;
   font-weight: bold;
@@ -107,30 +75,24 @@ h1 {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 20px rgba(255,0,200,0.9);
-  transition: transform 0.2s;
+  box-shadow: 0 0 18px rgba(255,0,200,0.8);
 }
 
-.ficha:hover {
-  transform: scale(1.1);
-}
-
-/* BOTÃO VOLTAR */
 .voltar {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
-  width: 92px;
-  height: 92px;
+  bottom: 25px;
+  right: 25px;
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #ff0077, #7b00ff);
+  background: linear-gradient(135deg, #ff00aa, #a000ff);
   color: white;
   font-size: 22px;
   text-decoration: none;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 30px rgba(255,0,200,0.9);
+  box-shadow: 0 0 25px rgba(255,0,200,0.9);
 }
 </style>
 </head>
@@ -145,27 +107,27 @@ h1 {
   <div class="lista">
 
     <div class="linha">
-      <a class="nome" href="drakar.html">Drakar</a>
+      <a class="nome" href="Drakar_20260104_144957_0000.png" target="_blank">Drakar</a>
       <a class="ficha" href="drakar_habilidades.html">F</a>
     </div>
 
     <div class="linha">
-      <a class="nome" href="ravena.html">Ravena</a>
+      <a class="nome" href="Ravena_20260104_XXXX.png" target="_blank">Ravena</a>
       <a class="ficha" href="ravena_habilidades.html">F</a>
     </div>
 
     <div class="linha">
-      <a class="nome" href="mikaza.html">Mikaza</a>
+      <a class="nome" href="Mikaza_20260104_XXXX.png" target="_blank">Mikaza</a>
       <a class="ficha" href="mikaza_habilidades.html">F</a>
     </div>
 
     <div class="linha">
-      <a class="nome" href="orin.html">Orin</a>
+      <a class="nome" href="Orin_20260104_XXXX.png" target="_blank">Orin</a>
       <a class="ficha" href="orin_habilidades.html">F</a>
     </div>
 
     <div class="linha">
-      <a class="nome" href="ravik.html">Ravik</a>
+      <a class="nome" href="Ravik_20260104_XXXX.png" target="_blank">Ravik</a>
       <a class="ficha" href="ravik_habilidades.html">F</a>
     </div>
 
@@ -175,4 +137,4 @@ h1 {
 <a class="voltar" href="index.html">Voltar</a>
 
 </body>
-</html>
+  </html>
