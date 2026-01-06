@@ -1,155 +1,87 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ressonância</title>
+  <meta charset="UTF-8">
+  <title>Ressonância</title>
 
-<style>
-/* RESET TOTAL */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  overflow: hidden; /* REMOVE QUALQUER BARRA */
-}
+    body {
+      width: 100vw;
+      height: 100vh;
+      background: url("img/fundo.jpg") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      color: white;
+    }
 
-/* BODY CENTRALIZADO PERFEITO */
-body {
-  background: black;
-  font-family: Arial, sans-serif;
+    /* MENU LATERAL */
+    .menu {
+      margin-left: 60px;
+    }
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    .menu h1 {
+      font-size: 64px;
+      margin-bottom: 60px;
+    }
 
-  position: relative;
-}
+    .menu a {
+      display: block;
+      font-size: 34px;
+      color: white;
+      text-decoration: none;
+      margin: 25px 0;
+      border-bottom: 3px solid white;
+      width: fit-content;
+      transition: 0.3s;
+    }
 
-/* FUNDO PULSANTE */
-body::before,
-body::after {
-  content: "";
-  position: absolute;
-  width: 200%;
-  height: 200%;
-  border-radius: 50%;
-}
+    .menu a:hover {
+      color: #c084fc;
+      border-color: #c084fc;
+      transform: translateX(10px);
+    }
 
-body::before {
-  background: radial-gradient(circle, rgba(180,0,255,0.25), transparent 60%);
-  animation: pulsoRoxo 10s infinite alternate;
-}
+    .disabled {
+      opacity: 0.4;
+      pointer-events: none;
+    }
 
-body::after {
-  background: radial-gradient(circle, rgba(255,0,60,0.2), transparent 60%);
-  animation: pulsoVermelho 12s infinite alternate;
-}
+    @media (max-width: 900px) {
+      body {
+        justify-content: center;
+      }
 
-@keyframes pulsoRoxo {
-  0% { transform: scale(0.8); opacity: 0.3; }
-  100% { transform: scale(1.2); opacity: 0.7; }
-}
+      .menu {
+        margin-left: 0;
+        text-align: center;
+      }
 
-@keyframes pulsoVermelho {
-  0% { transform: scale(1.1); opacity: 0.2; }
-  100% { transform: scale(1.4); opacity: 0.6; }
-}
-
-/* CAIXA PRINCIPAL (AGORA MAIOR E FIXA) */
- .container {
-  position: relative;
-  z-index: 5;
-
-  width: 480px;        /* MAIS LARGA */
-  min-height: 320px;  /* MAIS ALTA */
-
-  background: rgba(0,0,0,0.9);
-  border-radius: 35px;
-  padding: 40px;
-
-  text-align: center;
-  animation: boxGlow 5s infinite alternate;
-}
-
-
-/* TÍTULO */
-h1 {
-  font-size: 32px;
-  margin-bottom: 25px;
-  letter-spacing: 3px;
-
-  animation: textGlow 5s infinite alternate;
-}
-
-/* BOTÕES */
-.botao {
-  display: block;
-  width: 100%;
-  margin: 15px 0;
-  padding: 16px;
-
-  font-size: 18px;
-  color: white;
-  text-decoration: none;
-
-  border-radius: 15px;
-  background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
-
-  animation: buttonGlow 5s infinite alternate;
-  transition: transform 0.3s, filter 0.3s;
-}
-
-.botao:hover {
-  transform: scale(1.06);
-  filter: brightness(1.3);
-}
-
-/* ANIMAÇÕES */
-@keyframes boxGlow {
-  0% {
-    box-shadow: 0 0 45px rgba(180,0,255,0.7);
-  }
-  100% {
-    box-shadow: 0 0 45px rgba(255,0,60,0.7);
-  }
-}
-
-@keyframes textGlow {
-  0% {
-    color: #c400ff;
-    text-shadow: 0 0 20px rgba(200,0,255,1);
-  }
-  100% {
-    color: #ff003c;
-    text-shadow: 0 0 20px rgba(255,0,60,1);
-  }
-}
-
-@keyframes buttonGlow {
-  0% {
-    box-shadow: 0 0 15px rgba(160,0,255,0.6);
-  }
-  100% {
-    box-shadow: 0 0 15px rgba(255,0,0,0.6);
-  }
-}
-</style>
+      .menu a {
+        margin-left: auto;
+        margin-right: auto;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
-  <h1>RESSONÂNCIA</h1>
+  <div class="menu">
+    <h1>Ressonância</h1>
 
-  <a class="botao" href="personagens.html">Personagens</a>
-  <a class="botao" href="mapas.html">Mapas</a>
-</div>
+    <a href="personagens.html">Personagens</a>
+    <a href="mapas.html">Mapas</a>
+    <a class="disabled">Dado</a>
+  </div>
 
 </body>
-</html>
+</html>      
