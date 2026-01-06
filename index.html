@@ -6,11 +6,119 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* FUNDO PADRÃO */
+body {
+  background: url("img/Resso000.png") center / cover no-repeat fixed;
+  transition: background 0.4s ease;
+}
+
+/* TÍTULO */
+.titulo {
+  position: absolute;
+  top: 40px;
+  left: 50px;
+  font-size: 52px;
+  color: white;
+  font-weight: bold;
+}
+
+/* MENU */
+.menu {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.menu a {
+  color: white;
+  font-size: 26px;
+  text-decoration: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+/* PERSONAGENS */
+.personagens {
+  display: none;
+}
+
+.lista {
+  position: absolute;
+  top: 150px;
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.linha {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nome {
+  color: white;
+  font-size: 28px;
+  position: relative;
+  cursor: pointer;
+}
+
+.nome::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  background: white;
+}
+
+.botao-f {
+  width: 46px;
+  height: 32px;
+  border-radius: 20px;
+  background: white;
+  color: black;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* VISUALIZADOR DE PERSONAGEM */
+.fullscreen {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
 }
 
 /* FORÇAR HORIZONTAL NO CELULAR */
@@ -25,106 +133,75 @@
     left: 100%;
   }
 }
-
-html, body {
-  width: 100%;
-  height: 100%;
-  font-family: Arial, Helvetica, sans-serif;
-  overflow: hidden;
-}
-
-/* FUNDO PADRÃO */
-body {
-  background: url("img/00792resso.png") center / cover no-repeat fixed;
-}
-
-/* OVERLAY INVISÍVEL (NÃO MUDA A IMAGEM) */
-.overlay {
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-
-/* TÍTULO */
-.titulo {
-  position: absolute;
-  top: 40px;
-  left: 50px;
-  color: white;
-  font-size: 52px;
-  font-weight: bold;
-}
-
-/* MENU LATERAL */
-.menu {
-  position: absolute;
-  top: 150px;
-  left: 50px;
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-}
-
-/* LINKS DO MENU (IGUAL À IMAGEM) */
-.menu a {
-  color: white;
-  font-size: 26px;
-  text-decoration: none;
-  position: relative;
-  width: fit-content;
-  cursor: pointer;
-}
-
-/* LINHA EMBAIXO */
-.menu a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 100%;
-  height: 2px;
-  background: white;
-}
-
-/* HOVER SUAVE */
-.menu a:hover {
-  opacity: 0.8;
-}
-
-/* ÁREA DINÂMICA (MUDAR FUNDO) */
-body.personagens {
-  background: url("img/0098resso.png") center / cover no-repeat fixed;
-}
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
-
+<!-- HOME -->
+<div id="home">
   <div class="titulo">Ressonância</div>
-
   <nav class="menu">
     <a onclick="abrirPersonagens()">Personagens</a>
-    <a onclick="abrirMapas()">Mapas</a>
-    <a onclick="abrirDado()">Dado</a>
+    <a>Mapas</a>
+    <a>Dado</a>
   </nav>
-
 </div>
+
+<!-- PERSONAGENS -->
+<div id="personagens" class="personagens">
+  <div class="titulo">Personagens</div>
+
+  <div class="lista">
+    <div class="linha">
+      <div class="nome" onclick="verPersonagem('drakar.png')">Drakar</div>
+      <div class="botao-f">F</div>
+    </div>
+
+    <div class="linha">
+      <div class="nome" onclick="verPersonagem('ravena.png')">Ravena</div>
+      <div class="botao-f">F</div>
+    </div>
+
+    <div class="linha">
+      <div class="nome" onclick="verPersonagem('mikaza.png')">Mikaza</div>
+      <div class="botao-f">F</div>
+    </div>
+
+    <div class="linha">
+      <div class="nome" onclick="verPersonagem('orin.png')">Orin</div>
+      <div class="botao-f">F</div>
+    </div>
+
+    <div class="linha">
+      <div class="nome" onclick="verPersonagem('ravik.png')">Ravik</div>
+      <div class="botao-f">F</div>
+    </div>
+  </div>
+</div>
+
+<!-- IMAGEM PERSONAGEM -->
+<div id="viewer" class="fullscreen" onclick="voltarPersonagens()"></div>
 
 <script>
 function abrirPersonagens() {
-  document.body.className = "personagens";
+  document.body.style.background = "url('img/Resso000.png') center / cover no-repeat fixed";
+  document.getElementById("home").style.display = "none";
+  document.getElementById("personagens").style.display = "block";
 }
 
-function abrirMapas() {
-  alert("Mapa ainda será adicionado");
+function verPersonagem(img) {
+  document.getElementById("personagens").style.display = "none";
+  const viewer = document.getElementById("viewer");
+  viewer.style.backgroundImage = `url('img/${img}')`;
+  viewer.style.display = "block";
 }
 
-function abrirDado() {
-  alert("Dado ainda será adicionado");
+function voltarPersonagens() {
+  document.getElementById("viewer").style.display = "none";
+  document.getElementById("personagens").style.display = "block";
 }
 </script>
 
 </body>
-</html>
+        </html>
