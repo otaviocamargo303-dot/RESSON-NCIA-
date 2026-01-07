@@ -6,135 +6,92 @@
 <title>Personagens</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  min-height: 100vh;
-  background: radial-gradient(circle at center, #2a0033, #000);
+  margin: 0;
   font-family: Arial, sans-serif;
+  background: #0b0b0b;
   color: white;
-}
-
-.container {
-  width: 100%;
-  max-width: 420px;
-  padding: 30px 20px 120px;
-  margin: auto;
 }
 
 h1 {
   text-align: center;
-  font-size: 46px;
-  margin-bottom: 10px;
+  padding: 20px 0;
 }
 
-.subtitle {
-  text-align: center;
-  font-size: 16px;
-  opacity: 0.8;
-  margin-bottom: 40px;
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
-.lista {
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-
-.linha {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.nome {
-  flex: 1;
-  padding: 18px;
-  font-size: 22px;
-  border-radius: 14px;
+.card {
+  position: relative;
+  height: 220px;
+  border-radius: 12px;
+  overflow: hidden;
   text-decoration: none;
   color: white;
-  background: linear-gradient(135deg, #6a00ff, #b84cff);
-  text-align: center;
-  box-shadow: 0 0 18px rgba(160,80,255,0.8);
+  box-shadow: 0 0 10px rgba(0,0,0,0.8);
 }
 
-.ficha {
-  width: 70px;
-  height: 60px;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #ff00aa, #a000ff);
-  color: white;
-  font-size: 26px;
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+}
+
+.card span {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  z-index: 2;
+  font-size: 18px;
   font-weight: bold;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 18px rgba(255,0,200,0.8);
 }
 
-.voltar {
-  position: fixed;
-  bottom: 25px;
-  right: 25px;
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #ff00aa, #a000ff);
-  color: white;
-  font-size: 22px;
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 0 0 25px rgba(255,0,200,0.9);
+.drakar {
+  background: url("imagem/drakar0.png") center/cover no-repeat;
+}
+
+.ravena {
+  background: url("imagem/ravena0.png") center/cover no-repeat;
+}
+
+.mikaza {
+  background: url("imagem/mikaza0.png") center/cover no-repeat;
+}
+
+.orin {
+  background: url("imagem/orin0.png") center/cover no-repeat;
 }
 </style>
 </head>
 
 <body>
 
+<h1>Personagens</h1>
+
 <div class="container">
 
-  <h1>Personagens</h1>
-  <div class="subtitle">Os que andaram pela Ressonância</div>
+  <a href="drakar.html" class="card drakar">
+    <span>Drakar</span>
+  </a>
 
-  <div class="lista">
+  <a href="ravena.html" class="card ravena">
+    <span>Ravena</span>
+  </a>
 
-    <div class="linha">
-      <a class="nome" href="Drakar_20260104_144957_0000.png" target="_blank">Drakar</a>
-      <a class="ficha" href="drakar_habilidades.html">F</a>
-    </div>
+  <a href="mikaza.html" class="card mikaza">
+    <span>Mikaza</span>
+  </a>
 
-    <div class="linha">
-      <a class="nome" href="Ravena_20260104_XXXX.png" target="_blank">Ravena</a>
-      <a class="ficha" href="ravena_habilidades.html">F</a>
-    </div>
+  <a href="orin.html" class="card orin">
+    <span>Orin</span>
+  </a>
 
-    <div class="linha">
-      <a class="nome" href="Mikaza_20260104_XXXX.png" target="_blank">Mikaza</a>
-      <a class="ficha" href="mikaza_habilidades.html">F</a>
-    </div>
-
-    <div class="linha">
-      <a class="nome" href="Orin_20260104_XXXX.png" target="_blank">Orin</a>
-      <a class="ficha" href="orin_habilidades.html">F</a>
-    </div>
-
-    <div class="linha">
-      <a class="nome" href="Ravik_20260104_XXXX.png" target="_blank">Ravik</a>
-      <a class="ficha" href="ravik_habilidades.html">F</a>
-    </div>
-
-  </div>
 </div>
 
-<a class="voltar" href="index.html">Voltar</a>
-
 </body>
-  </html>
+</html>
