@@ -9,35 +9,46 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: url("imagem/drakar0.png") no-repeat center center fixed;
+  /* Aqui fica o fundo de cristal que você já tem no site principal */
+  background: url("imagem/Resso000.png") no-repeat center center fixed;
   background-size: cover;
   color: white;
 }
 
 .overlay {
-  background: rgba(0,0,0,0.65);
+  background: rgba(0,0,0,0.7); /* Deixa o fundo um pouco escuro para destacar o card */
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   padding: 20px;
 }
 
-h1 {
-  text-align: center;
+.personagem-card {
+  max-width: 100%;
+  width: 500px; /* Ajuste o tamanho conforme desejar */
+  border: 2px solid #5d2a8e;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
 }
 
-.box {
-  max-width: 600px;
-  margin: auto;
+.btn-voltar {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #5d2a8e;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
 }
 </style>
 </head>
 
 <body>
 <div class="overlay">
-  <div class="box">
-    <h1>Drakar</h1>
-    <p><strong>Classe:</strong> Guerreiro</p>
-    <p><strong>Descrição:</strong> Um combatente imponente, marcado pela força bruta e presença intimidadora.</p>
-  </div>
+  <img src="imagem/drakar0.png" alt="Drakar Card" class="personagem-card">
+  
+  <a href="personagens.html" class="btn-voltar">Voltar</a>
 </div>
 </body>
 </html>
