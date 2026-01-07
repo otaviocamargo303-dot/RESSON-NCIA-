@@ -2,96 +2,56 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Personagens</title>
 
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0b0b0b;
-  color: white;
-}
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0b0b12; /* fundo escuro simples */
+    color: white;
+  }
 
-h1 {
-  text-align: center;
-  padding: 20px 0;
-}
+  .container {
+    padding: 40px;
+  }
 
-.container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 15px;
-  padding: 20px;
-}
+  h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+  }
 
-.card {
-  position: relative;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  box-shadow: 0 0 10px rgba(0,0,0,0.8);
-}
+  .lista {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
 
-.card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-}
+  .personagem {
+    font-size: 24px;
+    text-decoration: none;
+    color: white;
+    border-bottom: 1px solid #555;
+    padding-bottom: 5px;
+    width: fit-content;
+  }
 
-.card span {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  z-index: 2;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.drakar {
-  background: url("imagem/drakar0.png") center/cover no-repeat;
-}
-
-.ravena {
-  background: url("imagem/ravena0.png") center/cover no-repeat;
-}
-
-.mikaza {
-  background: url("imagem/mikaza0.png") center/cover no-repeat;
-}
-
-.orin {
-  background: url("imagem/orin0.png") center/cover no-repeat;
-}
+  .personagem:hover {
+    color: #a78bfa;
+  }
 </style>
 </head>
 
 <body>
+  <div class="container">
+    <h1>Personagens</h1>
 
-<h1>Personagens</h1>
-
-<div class="container">
-
-  <a href="drakar.html" class="card drakar">
-    <span>Drakar</span>
-  </a>
-
-  <a href="ravena.html" class="card ravena">
-    <span>Ravena</span>
-  </a>
-
-  <a href="mikaza.html" class="card mikaza">
-    <span>Mikaza</span>
-  </a>
-
-  <a href="orin.html" class="card orin">
-    <span>Orin</span>
-  </a>
-
-</div>
-
+    <div class="lista">
+      <a class="personagem" href="drakar.html">Drakar</a>
+      <a class="personagem" href="ravena.html">Ravena</a>
+      <a class="personagem" href="mikaza.html">Mikaza</a>
+      <a class="personagem" href="orin.html">Orin</a>
+    </div>
+  </div>
 </body>
 </html>
