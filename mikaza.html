@@ -6,72 +6,38 @@
 <title>Mikaza</title>
 
 <style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  min-height: 100vh;
+  margin: 0;
   font-family: Arial, sans-serif;
+  background: url("imagem/mikaza0.png") no-repeat center center fixed;
+  background-size: cover;
   color: white;
-
-  background:
-    radial-gradient(circle at center, rgba(160,0,255,0.25), rgba(0,0,0,0.9)),
-    url("img/cristal.png") center / cover no-repeat fixed;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-/* CAIXA DA FICHA */
-.ficha {
-  width: 90%;
-  max-width: 420px;
-  padding: 30px;
-  background: rgba(0,0,0,0.75);
-  border-radius: 22px;
-  text-align: center;
-  box-shadow: 0 0 40px rgba(180,0,255,0.9);
+.overlay {
+  background: rgba(0,0,0,0.65);
+  min-height: 100vh;
+  padding: 20px;
 }
 
-/* IMAGEM DO PERSONAGEM */
-.ficha img {
-  width: 100%;
-  border-radius: 16px;
-  margin-bottom: 20px;
-  box-shadow: 0 0 25px rgba(200,0,255,0.8);
-}
-
-/* NOME */
 h1 {
-  font-size: 38px;
-  margin-bottom: 20px;
-  text-shadow: 0 0 20px #b000ff;
+  text-align: center;
 }
 
-/* BOTÃO VOLTAR */
-.voltar {
-  display: inline-block;
-  padding: 14px 26px;
-  border-radius: 14px;
-  text-decoration: none;
-  color: white;
-  background: linear-gradient(135deg, #ff0077, #7b00ff);
-  box-shadow: 0 0 25px rgba(255,0,200,0.9);
+.box {
+  max-width: 600px;
+  margin: auto;
 }
 </style>
 </head>
 
 <body>
-
-<div class="ficha">
-  <img src="img/mikaza.png" alt="Mikaza">
-  <h1>Mikaza</h1>
-  <a class="voltar" href="personagens.html">Voltar</a>
+<div class="overlay">
+  <div class="box">
+    <h1>Mikaza</h1>
+    <p><strong>Classe:</strong> Assassina</p>
+    <p><strong>Descrição:</strong> Rápida, letal e silenciosa. Nunca erra duas vezes.</p>
+  </div>
 </div>
-
 </body>
 </html>
