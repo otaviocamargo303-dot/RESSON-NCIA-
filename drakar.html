@@ -6,60 +6,38 @@
 <title>Drakar</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  min-height:100vh;
-  font-family:Arial,sans-serif;
-  color:white;
-  background:
-    radial-gradient(circle, rgba(160,0,255,0.25), rgba(0,0,0,0.9)),
-    url("img/cristal.png") center/cover no-repeat fixed;
-  display:flex;
-  justify-content:center;
-  align-items:center;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: url("imagem/drakar0.png") no-repeat center center fixed;
+  background-size: cover;
+  color: white;
 }
 
-.ficha{
-  width:90%;
-  max-width:420px;
-  padding:30px;
-  background:rgba(0,0,0,0.75);
-  border-radius:22px;
-  text-align:center;
-  box-shadow:0 0 40px rgba(180,0,255,0.9);
+.overlay {
+  background: rgba(0,0,0,0.65);
+  min-height: 100vh;
+  padding: 20px;
 }
 
-.ficha img{
-  width:100%;
-  border-radius:16px;
-  margin-bottom:20px;
-  box-shadow:0 0 25px rgba(200,0,255,0.8);
+h1 {
+  text-align: center;
 }
 
-h1{
-  font-size:38px;
-  margin-bottom:20px;
-  text-shadow:0 0 20px #b000ff;
-}
-
-.voltar{
-  display:inline-block;
-  padding:14px 26px;
-  border-radius:14px;
-  text-decoration:none;
-  color:white;
-  background:linear-gradient(135deg,#ff0077,#7b00ff);
-  box-shadow:0 0 25px rgba(255,0,200,0.9);
+.box {
+  max-width: 600px;
+  margin: auto;
 }
 </style>
 </head>
 
 <body>
-<div class="ficha">
-  <img src="img/drakar.png" alt="Drakar">
-  <h1>Drakar</h1>
-  <a class="voltar" href="personagens.html">Voltar</a>
+<div class="overlay">
+  <div class="box">
+    <h1>Drakar</h1>
+    <p><strong>Classe:</strong> Guerreiro</p>
+    <p><strong>Descrição:</strong> Um combatente imponente, marcado pela força bruta e presença intimidadora.</p>
+  </div>
 </div>
 </body>
 </html>
